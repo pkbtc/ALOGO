@@ -62,5 +62,36 @@ public class HashMapUsingLinkedList<K,V> {
         }
         return null;
     }
+    public void remove(String key){
+        int hash=Math.abs(key.hashCode())%list.size();
+        LinkedList<Entity> entities=list.get(hash);
+        Entity target=null;
+        for(Entity entity:entities){
+            if(entity.key.equals(key)){
+                target=entity;
+                break;
+            }
+        }
+        entities.remove(target);
+        size--;
+    }
+    @Override
+    public String toString(){
+        StringBuilder sb=new StringBuilder();
+        sb.append("{");
+        for(LinkedList<Entity> entities:list){
+            for(Entity entity:entities){
+                sb.append(entity.key).append(":").append(entity.value).append(",");
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        HashMapUsingLinkedList<String,String> map=new HashMapUsingLinkedList<>();
+        map.put("btc","king");
+        map.put("eth","internet of money");
+        System.out.println(map);
+    }
 
 }
