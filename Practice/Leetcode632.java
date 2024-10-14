@@ -25,7 +25,7 @@ public class Leetcode632 {
             if(max-minElement<minRange[1]-minRange[0]){
                 minRange[0]=minElement;
                 minRange[1]=max;
-            }
+            }   
             if(elementIndex==nums.get(listIndex).size()-1){
                 break;
             }
