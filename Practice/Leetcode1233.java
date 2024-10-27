@@ -23,7 +23,7 @@ public class Leetcode1233 {
                 if(!search(s)){
                     insert(s);
                     list.add(s);
-                }
+            }
             }
             return list;
     }
