@@ -2,7 +2,7 @@ public class Leetcode2490 {
     public static void main(String[] args) {
         String sen="leetcode exercises sound delightful";
         System.out.println(new Leetcode2490().isCircularSentence(sen));
-        
+
     }
     public boolean isCircularSentence(String sentence) {
         String[] s=sentence.split(" ");
@@ -15,6 +15,6 @@ public class Leetcode2490 {
             }
 
         }
-        return true;
+        return true;    
     }
 }
