@@ -5,6 +5,7 @@ public class decimalToBinary {
      // binaryToDecimal(1111);
       // binaryToAnyBase(1111, 8);
       anyBaseToDecimal(1111, 2);
+      
     }
     static void decimalToBinary(int number) {
         int res=0;
@@ -51,4 +52,6 @@ public class decimalToBinary {
         }
         System.out.println(res);
     }
+    
+
 }

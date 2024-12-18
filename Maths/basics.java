@@ -3,7 +3,11 @@ import java.util.Arrays;
 public class basics {
     public static void main(String[] args) {
         
-     primeNumberInARange(40);
+     //newtonRapson(5);
+     System.out.println(gcd(24, 36));
+     System.out.println(gcd(0, 5));
+     euclidean(24, 36);
+     lcm(24, 36);
     }
     static void reverse(int n){
         int res=0;
@@ -121,5 +125,86 @@ public class basics {
             System.out.println(i+" "+arr[i]);
         }
     }
+    //newton rapson method
+    static void newtonRapson(int n){
+        double tol=0.0001;
+        double root;
+        double X=n;
+        while(true){
+            root=0.5*(X+(n/X));
+            double ans=X-root;
+            if(ans<tol){
+                break;
+            }
+            X=root;
+        }
+        System.out.println(root);
+    }
+    static int gcd(int a,int b){
+        int min=Math.min(a,b);
+        while(min>0){
+            if(a%min==0 && b%min==0){
+                return min;
+            }
+            min--;
+        }
+        int max=Math.max(a,b);
+        return max;
+    }
+    static void euclidean(int a,int b){
+        while(a!=0 && b!=0){
+            if(a>b){
+                a=a-b;
+
+            }
+            else {
+                b=b-a;
+            }
+
+        }
+        if(a==0){
+            System.out.println(b);
+        }
+        else {
+            System.out.println(a);
+        }
+    }
+    static int efficientGcd(int a,int b){
+        while(a!=0 && b!=0){
+            if(a>b){
+                a=a%b;
+            }
+            else {
+                b=b%a;
+            }
+        }
+        if(a==0){
+            return b;
+        }
+        else {
+            return a;
+        }
+    }
+    static void lcm(int num1,int num2){
+        int res=(num1*num2)/efficientGcd(num1, num2);
+        System.out.println(res);
+    }
+    static void fac(int n){
+        int mul=1;
+        for (int i = 1; i <= n; i++) {
+            mul*=i;
+        }
+        System.out.println(mul);
+    }
+    static void countZeroAtEnd(int n){
+        int count=0;
+        while(n%10==0){
+            count++;
+            n/=10;
+        }
+        System.out.println(count);
+    }
     
+    
+
 }
