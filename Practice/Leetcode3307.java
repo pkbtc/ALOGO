@@ -1,6 +1,7 @@
 class Leetcode3307{
     public static void main(String[] args) {
-        
+        int[] operations = {1,2,3,4,5};
+        System.out.println(kthCharacter(10, operations));
     }
     public char kthCharacter(long k, int[] operations) {
         int countOps=0;
